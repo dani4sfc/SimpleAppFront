@@ -27,6 +27,8 @@ export class NoteContentComponent implements OnInit{
   //Agregar los inputs necesarios para pasar la info al editor de notas
   @Input() noteBody: String;
 
+  @Input() noteId: String;
+
 
   constructor(private noteService: NoteService) { }
 
@@ -37,12 +39,16 @@ export class NoteContentComponent implements OnInit{
   ngOnInit() {
     //console.log(this.dataTemp)
     //Cambiar a find by id
+    this.editNoteSubmit();
+
+  }
+
+
+  editNoteSubmit(){
     this.noteService.findAll().subscribe(data=>{
       this.note = data
     })
   }
-
-
 
 
 }

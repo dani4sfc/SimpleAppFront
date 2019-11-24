@@ -8,18 +8,24 @@
 
       <div class="form-group">
           <label for="body">Note</label>
-          <input type="text" [(ngModel)]="note.body" 
+          <input type="text" 
             class="form-control"
             id="body"
             name="body"
+            value="{{noteBody}}"
             placeholder="Enter the note content"
-            required #body="ngModel">
-          <div [hidden]="!body.pristine" class="alert alert-danger">note body is required</div>
+           >
+           <textarea></textarea>
         </div>
 
         <!--
         <div class="form-group">
           <textarea name="comment" form="noteForm">Enter text here...</textarea> 
+
+           [(ngModel)]="note.body" 
+           required #body="ngModel"
+          <div [hidden]="!body.pristine" class="alert alert-danger">note body is required</div>
+
 
         </div>
         -->
