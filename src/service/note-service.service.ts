@@ -10,28 +10,26 @@ export class NoteService {
 
   //We give to the url string the backend api URL
   constructor(private http: HttpClient) {
-    this.notesUrl = 'http://localhost:8080/notes';
+    this.notesUrl = 'http://localhost:8080/notes/';
    }
 
    //Methods get and post
    public findAll(): Observable<Note[]>{
-     return this.http.get<Note[]>(this.notesUrl);
+     return this.http.get<Note[]>(this.notesUrl+'findAll');
    }
 
    public save(note:Note){
-     return this.http.post<Note>(this.notesUrl, note);
+     return this.http.post<Note>(this.notesUrl+'createNote', note);
    }
 
    public update(note:Note){
-    return this.http.post<Note>(this.notesUrl, note);
+    return this.http.post<Note>(this.notesUrl+'updateNote', note);
    }
 
-   //Ver como terminar borrado (añadir id) quizas cambir delete por post
+   //Check this
    public delete(id: String){
-    return this.http.delete(this.notesUrl);
+    return this.http.delete(this.notesUrl+'deleteNote'+id);
 
    }
-
-   //Crear update y delete
 
 }
