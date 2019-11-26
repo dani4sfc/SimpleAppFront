@@ -15,11 +15,13 @@
         <tr *ngFor="let note of notes">
 
           <!-- Pasar id como parámetro para mostrar notas individualmente-->
-           <td> <a class="btn btn-info" (click)="getNote(note.id, note.body)">Edit</a> </td> 
+           <td> <a class="btn btn-info" (click)="noteContent(note.id)">Edit</a> </td> 
 
            <!-- routerLink="/content"-->
           <td>{{ note.title }}</td>
-          <td>{{ note.body }}</td>
+
+          <!-- TODO: check filters and apply here -->
+          <td>{{ (note.body.length>20)? (note.body | slice:0:20)+'...':(note.body) }}</td>
           <!--LLamar a funcionalidad de borrar aqui-->
           <td> <a routerLink="/addnote" class="btn btn-info bg-danger">Delete Note {{note.id}}</a> </td> 
 
@@ -28,10 +30,9 @@
     </table>
   </div>
 </div>
-{{pruebaBindeo}}
 <!--Comunicacion con modulo hijo, dataTemp es variable del hijo y prueba bindeo del padre -->
-<app-note-content [noteBody]='currentBody' [noteId]='currentId'>
+<!--<note-content [noteBody]='currentBody' [noteId]='currentId'>
 
   
 
-</app-note-content>
+</note-content>-->

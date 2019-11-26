@@ -4,7 +4,7 @@ import { NoteService } from '../../service/note-service.service';
 import { Note } from '../../model/note';
 
 @Component({
-  selector: 'app-note-form',
+  selector: 'note-form',
   templateUrl: './note-form.component.html',
   styleUrls: ['./note-form.component.css']
 })

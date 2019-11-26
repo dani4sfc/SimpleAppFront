@@ -4,7 +4,7 @@ import {NoteService} from '../../service/note-service.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-note-list',
+  selector: 'note-list',
   templateUrl: './note-list.component.html',
   styleUrls: ['./note-list.component.css']
 })
@@ -12,20 +12,19 @@ export class NoteListComponent implements OnInit, AfterViewInit {
 
 notes: Note[];
 
-currentId: String;
+/*currentId: String;
 
 currentBody: string;
 
 pruebaBindeo: String;
 
-pruebaBody: String;
+pruebaBody: String;*/
 
 //@Output() dataTemp : Note;
 
 //We call the service on the component constructor
   constructor(private noteService: NoteService, 
     private router: Router) {
-    this.pruebaBindeo = "odaskasjdnasdkj";
     //Cargar array de notes del servicio
    }
 
@@ -51,12 +50,6 @@ pruebaBody: String;
         this.loadData();
       }
     )
-  }
-
-  getNote(id: string, body: string){
-    this.currentBody = body;
-
-    this.currentId = id;
   }
 
   //Method to edit note
