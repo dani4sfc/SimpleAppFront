@@ -12,28 +12,16 @@ export class NoteListComponent implements OnInit, AfterViewInit {
 
 notes: Note[];
 
-/*currentId: String;
-
-currentBody: string;
-
-pruebaBindeo: String;
-
-pruebaBody: String;*/
-
-//@Output() dataTemp : Note;
-
 //We call the service on the component constructor
   constructor(private noteService: NoteService, 
     private router: Router) {
-    //Cargar array de notes del servicio
    }
 
   //On ngOnInit, we call the method to display notes and save them on a var
   ngOnInit() {
       this.loadData();
     }
-    
-  
+
 
   loadData(){
     this.noteService.findAll().subscribe(data=>{
@@ -46,7 +34,6 @@ pruebaBody: String;*/
     this.noteService.delete(id)
     .subscribe(
       data => {
-        console.log(data);
         this.loadData();
       }
     )

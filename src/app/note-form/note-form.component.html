@@ -11,37 +11,14 @@
       </div>
       <div [hidden]="!title.pristine" class="alert alert-danger">Title is required</div>
 
+
+
       <div class="form-group">
         <label for="body">Note</label>
-        <input type="text" [(ngModel)]="note.body" class="form-control" id="body" name="body"
-          placeholder="Enter the note content" required #body="ngModel">
+        <textarea [(ngModel)]="note.body" class="form-control" id="body" name="body" rows="10" cols="30" value="{{note.body}}" placeholder="Enter the note content"  required #body="ngModel"></textarea>
         <div [hidden]="!body.pristine" class="alert alert-danger">note body is required</div>
       </div>
 
-      <!-- 
-         <div class="form-group">
-
-          <label for="title">Title</label>
-          <input type="text" [(ngModel)]="note.title" 
-            class="form-control"
-            id="title"
-            name="title"
-            placeholder="Enter the title"
-            required #title="ngModel">
-        </div>
-        <div [hidden]="!title.pristine" class="alert alert-danger">Title is required</div>
-        <div class="form-group">
-          <label for="note">Note</label>
-          <input type="text" [(ngModel)]="note.note" 
-            class="form-control"
-            id="note"
-            name="note"
-            placeholder="Enter the note content"
-            required #note="ngModel">
-          <div [hidden]="!note.pristine" class="alert alert-danger">note body is required</div>
-        </div>
-
-      -->
       <button type="submit" [disabled]="!noteForm.form.valid" class="btn btn-info">Submit</button>
     </form>
   </div>

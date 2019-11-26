@@ -22,10 +22,6 @@ export class NoteFormComponent implements OnInit {
 
   onSubmit(){
 
-   // this.note = {id:"12", title:"ejemplo", note:"sadaskjdnaskjdn"};
-
-    console.log(this.note.title);
-
     this.noteService.save(this.note).subscribe(result => this.gotoNoteList());
     
   }   
