@@ -23,7 +23,7 @@
           <!-- TODO: check filters and apply here -->
           <td>{{ (note.body.length>20)? (note.body | slice:0:20)+'...':(note.body) }}</td>
           <!--LLamar a funcionalidad de borrar aqui-->
-          <td> <a routerLink="/addnote" class="btn btn-info bg-danger">Delete Note {{note.id}}</a> </td> 
+          <td> <a  (click)="deleteNote(note.id)" class="btn btn-info bg-danger">Delete Note {{note.id}}</a> </td> 
 
         </tr>
       </tbody>
